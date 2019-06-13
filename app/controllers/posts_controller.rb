@@ -5,8 +5,8 @@ class PostsController < ApplicationController
     before_action :set_target_post, only: %i[show edit update destroy]
   
     def index
-      # 投稿データを全て取得、またインスタンス変数なのでViewで参照可能
-        @posts = Post.page(params[:page])
+        @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+        @posts = @posts.page(params[:page])
     end
 
     def new
@@ -41,7 +41,8 @@ class PostsController < ApplicationController
     
     # 削除機能
     def destroy
-        @post.delete
+        # @post.delete
+        @pose.destroy
         flash[:notice] = "「#{@post.title}」の記事を削除しました!"
         redirect_to posts_path
     end
@@ -50,7 +51,9 @@ class PostsController < ApplicationController
 
     # paramsから欲しいデータのみ抽出
     def post_params
-        params.require(:post).permit(:name, :title, :content)
+        # params.require(:post).permit(:name, :title, :content)
+        # tag_ids をリストで追加
+        params.require(:post).permit(:name, :title, :content, tag_ids: [])
     end
     
     # アクションが呼び出される前に実行したい処理を記述
