@@ -17,7 +17,7 @@
     <div class="alert alert-primary"><%= flash[:notice] %></div>
 <% end %>
 <table class="table table-bordered border-primary table-hover table-sm posts_table">
-  <thead class="bg-info text-light">
+  <thead class="bg-secondary text-light">
     <tr>
       <th scope="col">No.</th>
       <th scope="col">投稿タイトル</th>
@@ -37,7 +37,11 @@
             <td><%= post.created_at.to_s(:datetime_base) %></td>
             <td><%= post.updated_at.to_s(:datetime_base) %></td>
             <td><%= link_to "詳細" , post, class: 'btn btn-outline-info' %></td>
-            <td><%= link_to "削除" , post, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
+            <td><%= link_to "削除" , post, method: :delete, 
+            title: "削除の確認", data: { confirm: "投稿記事を削除しますか？", 
+                                         commit: "削除する", 
+                                         cancel: "キャンセル" 
+                                         }, class: 'btn btn-outline-info'%></td>
         </tr>
       <% end %>
   </tbody>
