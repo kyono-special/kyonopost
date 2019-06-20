@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
     
-  get 'static_pages/home'
+  root 'static_pages#home'
 
   resources :comments, only: %i[create destroy]
 
-    root  'posts#index'
+    # root  'posts#index'
 
     resources :posts
 end
