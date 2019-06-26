@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     
     # 各アクションが呼び出される前に実行する(%iは、シンボルの配列を作成)
     before_action :set_target_post, only: %i[show edit update destroy]
-  
+    
     def index
         @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
         @posts = @posts.page(params[:page]).per(15).order('updated_at DESC')
