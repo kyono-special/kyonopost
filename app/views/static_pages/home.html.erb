@@ -1,16 +1,18 @@
 <div class="center jumbotron">
-  <h1>Welcome to the POSTON</h1>
+  <h1>POSTON</h1>
 
-<h2>
-    This is the home page for the
-    <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+<h2>気軽に使える投稿アプリ</h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to image_tag("illust4344.png", alt: "pig") %>
+
+  <% if logged_in? %>
+   <%= link_to "POSTONを始める", new_post_path, class: "btn btn-lg btn-primary" %>
+  <% else %>
+   <%= link_to "POSTONを始める", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
+<%#= link_to image_tag("rails.png", alt: "Rails logo"),
             'http://rubyonrails.org/' %>
 
 <%#= link_to image_tag("pig.jpg", alt: "pig"), '#' %>
