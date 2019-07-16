@@ -9,3 +9,4 @@ AWS, Git, Ruby on Rails, Heroku を使
 します。
 
 メールアドレス： kyono@example.com  パスワード： foobar
+ 
