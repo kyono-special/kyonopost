@@ -8,5 +8,5 @@ AWS, Git, Ruby on Rails, Heroku を使
 以下のメールアドレスとパスワードの入力をお願い
 します。
 
-メールアドレス： kyono@example.com
+メールアドレス： kyono@example.com 
 パスワード：　　 foobar
