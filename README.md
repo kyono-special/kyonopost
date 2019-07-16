@@ -1,3 +1,12 @@
-First portfolio
+2019年4月から独学でプログラミングを学び
+AWS, Git, Ruby on Rails, Heroku を使
+用し簡易投稿アプリをポートフォリオとして
+作成しました。
 
-© 2019 kyono_special
+ログイン方法
+ヘッダーの Log in リンクからログイン画面に進み
+以下のメールアドレスとパスワードの入力をお願い
+します。
+
+メールアドレス： kyono@example.com
+パスワード：　　 foobar
